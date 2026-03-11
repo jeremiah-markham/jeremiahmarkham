@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <script src="list-update.js"></script>
+        <title>Todo App - List Update</title>
+        <ul class="navbar center">
+            <li class="title"><h1>List Update</h1></li>
+        </ul>
+    </head>
+    <body>
+        <div class="content center">
+            <button onclick="document.location.replace('index.html')">Back</button>
+            <p>Enter fields and click Save</p>
+            <label for="name-field">Name:</label>
+            <input id="name-field" type="text">
+            <button onclick="saveList()">Save</button>
+            <!-- <button onclick="addItem()">Add Item</button> -->
+            <table id="item-table" class="todo">
+                <tr class="header">
+                    <th>Complete</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>State</th>
+                    <th>Actions</th>
+                </tr>
+                <tr><td><input type="checkbox"></td><td><input type="text"></td><td type="text"></td><td><select><option>in-progress</option><option>complete</option><option>canceled</option></select></td><td><button>Save</button></td></tr>
+            </table>
+        </div>
+    </body>
+</html>

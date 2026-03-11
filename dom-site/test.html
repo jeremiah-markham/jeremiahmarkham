@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+#div1 {
+  width: 350px;
+  height: 70px;
+  padding: 10px;
+  border: 1px solid #aaaaaa;
+}
+</style>
+<script>
+function dragstartHandler(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function dragoverHandler(ev) {
+  ev.preventDefault();
+}
+
+function dropHandler(ev) {
+  ev.preventDefault();
+  const data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+}
+</script>
+</head>
+<body>
+
+<a href="index.html">GO HOME</a>
+
+<h1>Drag and Drop API</h1>
+
+<p>Drag and drop the W3Schools header into the rectangle:</p>
+
+<div id="div1" ondrop="dropHandler(event)"   ondragover="dragoverHandler(event)"></div>
+<br>
+
+<h1 id="h1" draggable="true" ondragstart="dragstartHandler(event)">W3Schools.com</h1>
+
+</body>
+</html>

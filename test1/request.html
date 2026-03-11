@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <script src="request.js"></script>
+        <title>North Travels - Request</title>
+
+        <ul class="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="tours.html">Tours</a></li>
+            <li><a href="request.html">Request Info</a></li>
+        </ul>
+    </head>
+    <body>
+        <div class="article">
+            <h1>Request Information</h1>
+
+            <p>If you would like to get more information about taking one of these trips, fill out the form below and press submit.</p>
+            
+            <form id="request-form" onsubmit="displayThanks(event)">
+                <label for="name">Name: </label><input form="request-form" name="name" id="name" required type="text"> 
+                <br>
+                <label for="email">Email: </label><input form="request-form" name="email" id="email" required pattern="[^@\s]+@[^@\s]+\.[^@\s]+" title="Email must contain '@' and '.'" type="email"> 
+                <br>
+                <select form="request-form" name="tours" id="select-tour">
+                    <option value="israel">See Israel</option>
+                    <option value="holylands">See Holy Lands</option>
+                    <option value="museums">See Museums</option>
+                </select>
+                <br>
+                <input form="request-form" type="submit">
+                <p id="thanks">Thank you</p>
+            </form>
+        </div>
+    </body>
+    <footer>
+        <p class="center">Contact North Travels at <a href="mailto:info@northtravels.com">info@northtravels.com</a></p>
+    </footer>
+</html>

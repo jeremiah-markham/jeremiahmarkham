@@ -1,0 +1,123 @@
+html {
+    --link-color: #85CCDD;
+    --primary-color: #3498AF;
+    --secondary-color: #076980;
+    --tertiary-color: #3a474d;
+    --background-color: #1e272b;
+    --text-color: #e8eff1;
+
+    font-family: sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+a {
+    color: var(--link-color);
+}
+
+a:visited {
+    color: var(--secondary-color);
+}
+
+th {
+    text-align: left;
+}
+
+td {
+    padding-right: 1em;
+}
+
+.word-space {
+    word-spacing: 0.5em;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.table {
+    text-align: center;
+}
+
+div.table-cell {
+    background-color: green;
+}
+
+div.table-cell:hover {
+    background-color: var(--primary-color);
+}
+
+body {
+    margin: 0;
+}
+
+div.text-block {
+    margin: 1em;
+}
+
+ul.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: var(--tertiary-color);
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+}
+
+ul.navbar li {
+    font-size: large;
+    background-color: var(--tertiary-color);
+    padding: 2em;
+    margin: 0;
+
+    /* box-sizing: border-box; */
+}
+
+ul.navbar li a {
+    color: var(--link-color);
+}
+
+ul.navbar li.active {
+    background-color: var(--primary-color);
+}
+
+ul.navbar li:hover {
+    background-color: var(--secondary-color);
+}
+
+ul.navbar li.active:hover {
+    background-color: var(--primary-color);
+}
+
+ul.navbar li.title {
+    font-size: medium;
+    background-color: var(--tertiary-color);
+    padding-right: 1em;
+    padding-left: 1em;
+    padding-bottom: 0em;
+    padding-top: 0em;
+}
+
+ul.navbar li.title a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+a.pill {
+    font-size: x-large;
+    text-decoration: none;
+    color: var(--text-color);
+    background-color: var(--primary-color);
+    border-radius: 1.6em;
+    padding: 0.8em; 
+    line-height: 2.75em;
+}
+
+a.pill:hover {
+    background-color: var(--secondary-color);
+}

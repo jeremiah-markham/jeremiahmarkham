@@ -1,0 +1,33 @@
+.plus-icon {
+    position: relative;
+    width: 1em; /* Adjust size */
+    height: 1em;
+    /* display: inline;
+    padding-right: 0.6em;
+    padding-left: 0.6em; */
+}
+
+.plus-icon::before,
+.plus-icon::after {
+    content: "";
+    position: absolute;
+    background-color: #000; /* Plus sign color */
+}
+
+/* Vertical line */
+.plus-icon::before {
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 0.1em; /* Adjust thickness */
+    transform: translateX(-50%);
+}
+
+/* Horizontal line */
+.plus-icon::after {
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 0.1em; /* Adjust thickness */
+    transform: translateY(-50%);
+}

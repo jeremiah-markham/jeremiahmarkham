@@ -1,0 +1,137 @@
+@import url(icons.css);
+
+html {
+    --text-color: white;
+    --text-color-dark: black;
+    --background-color: black;
+    --primary-color: #e0e0e0;
+    --secondary-color: #ada6a6;
+    --tertiary-color: #323332;
+
+    color: var(--text-color);
+    background-color: var(--background-color);
+    font-family: Arial;
+}
+
+#thanks {
+    opacity: 0;
+    transition: 0.5s;
+}
+
+#thanks.active {
+    opacity: 1;
+}
+
+a {
+    color: var(--text-color);
+}
+
+form {
+    line-height: 2.5em;
+    justify-self: left;
+}
+
+img.img_text {
+    float:left;
+    padding: 1em;
+    margin: 0;
+}
+
+div.article {
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    justify-items: center;
+}
+
+.ignore-width {
+    width:80vw;
+}
+
+.center {
+    text-align: center;
+}
+
+ul.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: var(--tertiary-color);
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    /* top: 0.5em; */
+    top: 0;
+}
+
+
+ul.navbar li {
+    background-color: var(--tertiary-color);
+    padding: 1em;
+    margin: 0;
+    transition: 0.5s;
+}
+
+ul.navbar li a {
+    text-decoration: none;
+    /* font-weight: bold; */
+}
+
+ul.navbar li:hover a {
+    color: var(--text-color-dark);
+}
+
+ul.navbar li:hover {
+    background-color: var(--secondary-color);
+}
+
+
+
+
+button.accordion {
+    font-size: larger;
+    font-weight: bold;
+    background-color: var(--secondary-color);
+    color: var(--text-color-dark);
+    cursor: pointer;
+    padding: 1em;
+    width: 100%;
+    text-align: center;
+    border: none;
+    outline: none;
+    transition: 1s;
+}
+
+button.accordion::before {
+    content: '+';
+    padding-right:0.2em;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+/* button.accordion.active, button.accordion:hover {
+    background-color: var(--tertiary-color);
+} */
+
+button.accordion.active::before {
+    content: '-';
+}
+
+/* Style the accordion panel. Note: hidden by default */
+div.accordion {
+    padding: 0 1em    ;
+    margin-bottom: 1em;
+    background-color: var(--primary-color);
+    color: var(--text-color-dark);
+    overflow: hidden;
+    height: 1em;
+
+    interpolate-size: allow-keywords;
+    transition: 0.5s;
+}
+
+div.accordion.active {
+    height: auto;
+    background-color: var(--primary-color);
+    color: var(--text-color-dark);
+}

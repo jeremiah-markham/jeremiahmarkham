@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Student Delete</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <script>
+      function urlParam(name) {
+        var results = new RegExp("[\?&]" + name + "=([^&#]*)").exec(
+          window.location.href
+        );
+        if (results == null) {
+          return null;
+        } else {
+          return results[1] || 0;
+        }
+      }
+
+      function deleteRecord() {
+        console.log("delete function");
+        document.getElementById("deleteMessage").innerHTML =
+          "Deleting record ... Wait";
+        document.getElementById("deletebtn").setAttribute("disabled", true);
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function () {
+          if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+            console.log("Delete success ");
+            window.location.assign("student-list.html");
+          } else if (xmlhttp.readyState === 4) {
+            console.log("Delete error " + this.statusText);
+            console.log("incoming Text " + this.responseText);
+          }
+        };
+        xmlhttp.open("DELETE", "/api/students/" + urlParam("id"), true);
+        xmlhttp.send();
+      }
+
+      document.onreadystatechange = function () {
+        if (document.readyState === "complete") {
+          var xmlhttp = new XMLHttpRequest();
+          xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+              var response = JSON.parse(this.responseText);
+              console.log(response);
+              document.getElementById("deleteMessage").innerHTML =
+                "Delete record for: " +
+                response[0].firstName +
+                " " +
+                response[0].lastName +
+                "?";
+            }
+          };
+          xmlhttp.open("GET", "/api/students/" + urlParam("id"), true);
+          xmlhttp.send();
+        }
+      };
+    </script>
+
+    <h2>Student Delete</h2>
+    <div class="block-center">
+      <br /><br />
+      <p id="deleteMessage"></p>
+      <br /><br />
+
+      <input
+        class="inline"
+        id="deletebtn"
+        type="button"
+        value="Delete"
+        onclick="deleteRecord()"
+      />
+
+      <form action="index.html" method="GET">
+        <button type="submit">Cancel</button>
+      </form>
+    </div>
+  </body>
+</html>

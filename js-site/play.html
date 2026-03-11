@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <script src="cheese.js"></script>
+        <title>Play</title>
+        <ul class="navbar">
+            <li class="title"><a href="../index.html"><h1>Jeremiah Markham</h1></a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li class="active"><a href="play.html">Play</a></li>
+        </ul>
+    </head>
+    <body>
+        <div class="text-block">
+            <h2>Play</h2>
+            <h3 class="center">What cheese is this?</h3>
+            <div class="cheese-btns">
+                <button name="cheddar" onclick="changeCheese('cheddar')" class="cheese-btn active">1</button>
+                <button name="mozzarella" onclick="changeCheese('mozzarella')" class="cheese-btn">2</button>
+                <button name="parmesan" onclick="changeCheese('parmesan')" class="cheese-btn">3</button>
+                <button name="brie" onclick="changeCheese('brie')" class="cheese-btn">4</button>
+            </div>
+            <div class="cheeses">
+                <img id="cheddar" class="cheese active" src="../img/cheddar.png">
+                <img id="mozzarella" class="cheese" src="../img/mozzarella.jpg">
+                <img id="parmesan" class="cheese" src="../img/parmesan.jpg">
+                <img id="brie" class="cheese" src="../img/brie.webp">
+            </div>
+            <div class="center">
+                <p id="cheese-index">1/4<p>
+
+                <input id="cheese-input" type="text" onkeyup="validateCheese(event)">
+                <p id="input-response"></p>
+            </div>
+        </div>
+    </body>
+</html>

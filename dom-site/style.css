@@ -1,0 +1,292 @@
+html {
+    --link-color: #85CCDD;
+    --primary-color: #3498AF;
+    --secondary-color: #076980;
+    --tertiary-color: #3a474d;
+    --background-color: #1e272b;
+    --text-color: #e8eff1;
+
+    --select-bg-color: #3498AFAF;
+    --select-text-color: var(--text-color);
+
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+/* For WebKit/Blink browsers (Chrome, Safari, Edge, Opera) and standard browsers */
+::selection {
+    background-color: var(--select-bg-color); /* Desired highlight background color (e.g., yellow) */
+    color: var(--select-text-color);             /* Desired text color when selected */
+}
+
+/* For Gecko browsers (Firefox) - use the vendor prefix for compatibility */
+::-moz-selection {
+    background-color: var(--select-bg-color);
+    color: var(--select-text-color);   
+}
+
+#shake {
+    position: absolute;
+}
+
+#move {
+    /* position: absolute; */
+    position: relative;
+    width: 0;
+    left: 30%;
+}
+
+.whisper {
+    font-size: x-small;
+    opacity: 0.7;
+}
+
+img {
+    border-radius: 0.8em;
+    border-shape: squircle;
+    /* border-style: solid;
+    border-width: 0.3em;
+    border-color: var(--link-color); */
+}
+
+a {
+    color: var(--link-color);
+}
+
+a:visited {
+    color: var(--secondary-color);
+}
+
+th {
+    text-align: left;
+}
+
+td {
+    padding-right: 1em;
+}
+
+.word-space {
+    word-spacing: 0.5em;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+div.table {
+    background-color: var(--tertiary-color);
+    text-align: center;
+    display: table;
+    border-radius: 0.8em;
+    corner-shape: squircle;
+    padding: 1.6em;
+}
+
+div.table-row {
+    display: table-row;
+}
+
+div.table-cell {
+    /* background-color: var(--secondary-color); */
+    display: table-cell;
+    padding: 0.4em;
+    transition: 0.25s;
+}
+
+div.table-cell:empty {
+    border-style: solid;
+    border-radius: 0.8em;
+    corner-shape: squircle;
+}
+
+div.table-cell:hover:empty {
+    scale: 1;
+}
+
+div.table-cell.can-drop {
+    background-color: var(--background-color);
+}
+
+div.table-cell img {
+    border-radius: 1em;
+    border: var(--primary-color);
+    border-style: solid;
+    corner-shape: squircle;
+    transition: 0.5s;
+}
+
+div.table-cell:hover{
+    /* background-color: var(--primary-color); */
+    scale: 1.1;
+}
+
+div.table-cell:hover img {
+    box-shadow: 1em 1em 1em rgba(0, 0, 0, 0.65);  
+}
+
+body {
+    margin: 0;
+}
+
+div.text-block {
+    margin: 1em;
+}
+
+div.text-block h2 {
+    text-decoration: underline;
+    /* text-decoration-style: double; */
+    text-decoration-thickness: 0.3em;
+    text-decoration-color: var(--primary-color);
+}
+
+ul.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: var(--tertiary-color);
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+}
+
+ul.navbar li {
+    font-size: large;
+    background-color: var(--tertiary-color);
+    padding: 2em;
+    margin: 0;
+
+    /* box-sizing: border-box; */
+}
+
+ul.navbar li a {
+    color: var(--link-color);
+}
+
+ul.navbar li.active {
+    background-color: var(--primary-color);
+}
+
+ul.navbar li:hover {
+    background-color: var(--secondary-color);
+}
+
+ul.navbar li.active:hover {
+    background-color: var(--primary-color);
+}
+
+ul.navbar li.title {
+    font-size: medium;
+    background-color: var(--tertiary-color);
+    padding-right: 1em;
+    padding-left: 1em;
+    padding-bottom: 0em;
+    padding-top: 0em;
+}
+
+ul.navbar li.title a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+ /* Style the buttons that are used to open and close the accordion panel */
+button.accordion {
+    font-size: large;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 1s;
+}
+
+button.accordion::after {
+    float: right;
+    content: '\25BC';
+    transition: 0.5s;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+button.accordion.active, button.accordion:hover {
+    background-color: var(--secondary-color);
+}
+
+button.accordion.active::after {
+    rotate: 180deg;
+    /* scale: -1; */
+}
+
+/* Style the accordion panel. Note: hidden by default */
+div.accordion-panel {
+    padding: 0 1em    ;
+    margin-bottom: 1em;
+    background-color: var(--background-color);
+    color: var(--background-color);
+    overflow: hidden;
+    height: 0;
+    interpolate-size: allow-keywords;
+    transition: 0.5s;
+}
+
+div.accordion-panel.active {
+    height: auto;
+    background-color: var(--tertiary-color);
+    color: var(--text-color);
+}
+
+.cheese-btns {
+    justify-content: center;
+    margin: auto;
+    display: flex;
+}
+
+.cheese {
+    object-fit:cover;
+    height: 0;
+    width: 0;
+    display: flex;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.cheese.active {
+    width: 20em; 
+    height: 20em;
+    opacity: 1;
+    margin: 1em auto 1em auto;
+}
+
+.cheese-btn {
+    padding: 0.5em;
+    margin: auto 0.2em auto 0.2em;
+    border-radius: 0.8em;
+    background-color: var(--secondary-color);
+    border-width: 0;
+    transition: 0.5s;
+}
+
+.cheese-btn.active {
+    background-color: var(--primary-color);
+}
+
+#cheese-index {
+    transition: 5s;
+}
+
+#input-response.visible {
+    opacity: 1;
+    transition: 1s;
+}
+
+#input-response {
+    opacity: 0;
+    transition: 1s;
+}
